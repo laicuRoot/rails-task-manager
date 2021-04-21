@@ -1,0 +1,23 @@
+<div class="container mx-auto">
+  <div class="row text-center mt-5">
+    <div class="col-sm-12">
+      <h1>Create your task</h1>
+      <%= simple_form_for(@task) do |f| %>
+        <div>
+          <%= f.label :title %>
+          <%= f.text_field :title %>
+        </div>
+        <div>
+          <%= f.label :details %>
+          <%= f.text_area :details, size: "25x5" %>
+        </div>
+        <% if @task.new_record? == false %>
+          <%= f.check_box :completed %>
+          <%= f.label :completed %>
+        <% end %>
+        <%= f.submit %>
+      <% end %>
+      <%= link_to("Back to list", tasks_path) %>
+    </div>
+  </div>
+</div>
