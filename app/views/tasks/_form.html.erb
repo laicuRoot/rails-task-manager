@@ -1,15 +1,15 @@
 <div class="container mx-auto">
   <div class="row text-center mt-5">
     <div class="col-sm-12">
-      <h1>Create your task</h1>
+      <h1 class="text-primary">Create your task</h1>
       <%= simple_form_for(@task) do |f| %>
-        <div>
-          <%= f.label :title %>
+        <div class="d-inline-flex justify-content-center m-1">
+          <span class='font-weight-bold p-1 text-info'><%= f.label :title %></span>
           <%= f.text_field :title %>
         </div>
-        <div>
-          <%= f.label :details %>
-          <%= f.text_area :details, size: "25x5" %>
+        <div class='d-inline-flex justify-content-center m-1 pr-3'>
+          <span class='font-weight-bold p-1 text-info'><%= f.label :details %></span>
+          <%= f.text_area :details %>
         </div>
         <% if @task.new_record? == false %>
           <%= f.check_box :completed %>
